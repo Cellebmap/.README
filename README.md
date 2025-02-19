@@ -11,8 +11,8 @@
     3. 
 
 * **서비스 URL 정보**
-    * blog github repo: https://github.com/najasinis/Handmade_Pet_Food_Blog
-    * notion(for planning): https://www.notion.so/2-0-138c734b18ae494a8fa668773a9f1c8e
+    * 
+    * 
 
 * **앱 별 핵심 기능**
     * 필러링된 로그인 유저들만 사용 가능
