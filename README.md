@@ -1,6 +1,11 @@
-# Cellebmap
+# Cellebmap(임영웅 ver)
 
-* **목표**
+* **현재 웹 개발 목표**
+    * 임영웅 언급/방문한 관광지 데이터들을 맵에 표시
+    * 유저가 가려는 장소 기반, 관광지 데이터들을 추천
+    * 선택한 순서 및 장소 정보들을 기반으로 여행
+
+* **최종 목표**
     * 좋아하는 셀럽/여행자들의 위치 정보 선택
     * 그들이 방문/추천한 관광지 데이터 수집 및 분석
     * LLM 기반 개인화된 여행 추천 서비스 제공
@@ -53,36 +58,17 @@ gantt
 * **화면 정의서**
     <table>
         <tr>
-            <th>스플래쉬 화면</th>
+            <th>메인화면</th>
             <th>설명</th>
         </tr>
         <tr>
             <td width="70%">
-![셀럽맵 스플래쉬 화면](https://github.com/user-attachments/assets/f2738a3f-cc93-4b81-85d4-15d8d86a5a88)            
+![셀셀럽맵 지도 화면](https://github.com/user-attachments/assets/0a5bc701-9e2c-4eb5-8605-d4d3943e7694)
             </td>
             <td>
                 <ul>
-                    <li>셀럽맵 로고 화면</li>
-                    <li>셀럽맵 지도 화면으로 전환</li>
-                    <li>웹 구동 시 가장 먼저 뜨는 화면</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>셀럽맵 화면</th>
-            <th>설명</th>
-        </tr>
-        <tr width="70%">
-            <td width="70%">
-            ![셀맵 지도 화면](https://github.com/user-attachments/assets/0a5bc701-9e2c-4eb5-8605-d4d3943e7694)
-
-            </td>
-            <td>
-                <ul>
-                    <li>게시물 사진이 바로 나오게끔 하기</li>
-                    <li>해당 포스트에 대한 댓글 및 대댓글이 나오게끔 하기</li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </td>
         </tr>
