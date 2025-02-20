@@ -39,18 +39,13 @@ gantt
     title Handmade_Pet_Food_Blog
     dateFormat  YYYY-MM-DD
     section 계획
-    계획 수립(프로젝트 범위 수립, ERD 작성, API 명세서)        :done,    des1, 2025-02-20, 8d
-    section 설계
-    와이어프레임 작성         :         des3, after des2, 1d
-    데이터베이스 스키마 설계  :         des4, after des2, 1d
-    section 개발
-    기능 개발                :         dev2, after des2, 2d
-    section 테스트
-    테스트 케이스 작성       :         tes1, after dev2, 1d
-    테스트                  :         tes2, after dev2, 1d
+    계획 수립(프로젝트 범위 수립, ERD 작성, API 명세서)        :       des1, 2025-02-20, 8d
+    section 프론트엔드
+    react JS         :         des2, after des1, 15d
+    section 백엔드
+    node JS                :         dev3, after des2, 31d
     section 배포
-    배포 준비               :         dep1, after tes2, 1d
-    출시                    :         dep2, after dep1, 1d
+    파이어베이스       :         dev4, after dev3, 15d
 ```
 
 * **화면 정의서**
