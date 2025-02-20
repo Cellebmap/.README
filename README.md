@@ -28,65 +28,27 @@
      * 경로 최적화 추천
      
 * **ERD**
-```mermaid
-erDiagram
-    User {
-        BigInt id PK
-        String username
-        String email
-        String password
-        String preferences
-        DateTime last_login
-        DateTime created_at
-        DateTime updated_at
-    }
-
-    Celebrity {
-        BigInt id PK
-        String name
-        String description
-        String social_links
-        DateTime created_at
-    }
-
-    Location {
-        BigInt id PK
-        String name
-        String description
-        Float latitude
-        Float longitude
-        String category
-        String photos
-        DateTime created_at
-        BigInt celebrity_id FK
-    }
-
-    Review {
-        BigInt id PK
-        String content
-        Int rating
-        String photos
-        DateTime visit_date
-        DateTime created_at
-        BigInt user_id FK
-        BigInt location_id FK
-    }
-
-    UserFollow {
-        BigInt id PK
-        DateTime created_at
-        BigInt user_id FK
-        BigInt celebrity_id FK
-    }
-
-    User ||--o{ Review : "writes"
-    User ||--o{ UserFollow : "follows"
-    Celebrity ||--o{ Location : "recommends"
-    Celebrity ||--o{ UserFollow : "followed_by"
-    Location ||--o{ Review : "has"
-```
 
 * **WBS**
+```mermaid
+gantt
+    title Handmade_Pet_Food_Blog
+    dateFormat  YYYY-MM-DD
+    section 계획
+    프로젝트 범위 정의        :done,    des1, 2024-03-06, 1d
+    요구사항 수집             :active,  des2, after des1, 1d
+    section 설계
+    와이어프레임 작성         :         des3, after des2, 1d
+    데이터베이스 스키마 설계  :         des4, after des2, 1d
+    section 개발
+    기능 개발                :         dev2, after des2, 2d
+    section 테스트
+    테스트 케이스 작성       :         tes1, after dev2, 1d
+    테스트                  :         tes2, after dev2, 1d
+    section 배포
+    배포 준비               :         dep1, after tes2, 1d
+    출시                    :         dep2, after dep1, 1d
+```
 
 * **화면 정의서**
     <table>
