@@ -86,32 +86,7 @@ erDiagram
     Location ||--o{ Review : "has"
 ```
 
- ![2회차 프로젝트_ERD drawio](https://github.com/najasinis/Handmade_Pet_Food_Blog/assets/145651124/ad40e6a9-38eb-4597-a8c2-2fc91340e078)
-
 * **WBS**
-```mermaid
-gantt
-    title Cellebmap Development Timeline
-    dateFormat  YYYY-MM-DD
-    section 기획
-    서비스 기획              :done,    plan1, 2024-03-01, 5d
-    요구사항 분석            :active,  plan2, after plan1, 5d
-    section 설계
-    시스템 아키텍처 설계     :         arch1, after plan2, 7d
-    데이터베이스 설계        :         arch2, after plan2, 5d
-    UI/UX 설계              :         arch3, after plan2, 10d
-    section 개발
-    백엔드 API 개발          :         dev1, after arch2, 15d
-    프론트엔드 개발          :         dev2, after arch3, 15d
-    LLM 엔진 개발           :         dev3, after dev1, 10d
-    section 테스트
-    단위 테스트              :         test1, after dev3, 5d
-    통합 테스트              :         test2, after test1, 5d
-    사용자 테스트            :         test3, after test2, 5d
-    section 배포
-    베타 서비스              :         deploy1, after test3, 10d
-    정식 출시                :         deploy2, after deploy1, 5d
-```
 
 * **화면 정의서**
     <table>
@@ -121,7 +96,7 @@ gantt
         </tr>
         <tr>
             <td width="70%">
-![메인화면](https://github.com/najasinis/Handmade_Pet_Food_Blog/assets/145651124/4685fb65-f866-4bd9-beb4-63e25bde2933)
+![셀맵 스플래쉬 화면](https://github.com/user-attachments/assets/f2738a3f-cc93-4b81-85d4-15d8d86a5a88)            
             </td>
             <td>
                 <ul>
