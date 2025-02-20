@@ -91,31 +91,31 @@ erDiagram
 * **화면 정의서**
     <table>
         <tr>
-            <th>메인화면</th>
+            <th>스플래쉬 화면</th>
             <th>설명</th>
         </tr>
         <tr>
             <td width="70%">
-![셀맵 스플래쉬 화면](https://github.com/user-attachments/assets/f2738a3f-cc93-4b81-85d4-15d8d86a5a88)            
+![셀럽맵 스플래쉬 화면](https://github.com/user-attachments/assets/f2738a3f-cc93-4b81-85d4-15d8d86a5a88)            
             </td>
             <td>
                 <ul>
-                    <li>blog URL 변경 필요</li>
-                    <li>가장 최신의 게시물을 맨 위에 게시 기능 구현 필요</li>
-                    <li>그 외 게시물들을 따로 목록화하는 기능 필요</li>
-                    <li>CRUD 검색 기능 구현</li></li>
+                    <li>셀럽맵 로고 화면</li>
+                    <li>셀럽맵 지도 화면으로 전환</li>
+                    <li>웹 구동 시 가장 먼저 뜨는 화면</li>
                 </ul>
             </td>
         </tr>
     </table>
     <table>
         <tr>
-            <th>포스트 화면</th>
+            <th>셀럽맵 화면</th>
             <th>설명</th>
         </tr>
         <tr width="70%">
             <td width="70%">
-![포스트 화면](https://github.com/najasinis/Handmade_Pet_Food_Blog/assets/145651124/d7da3dd5-d5f4-443e-8981-317fb4e33249)
+            ![셀맵 지도 화면](https://github.com/user-attachments/assets/0a5bc701-9e2c-4eb5-8605-d4d3943e7694)
+
             </td>
             <td>
                 <ul>
