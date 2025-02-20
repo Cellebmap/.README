@@ -1,25 +1,31 @@
 # Cellebmap
 
 * **목표**
-    * 좋아하는 셀럽 선택
-    * 그들이 언급/추천한 관광지 데이터 수집
-    * 
+    * 좋아하는 셀럽/여행자들의 위치 정보 선택
+    * 그들이 방문/추천한 관광지 데이터 수집 및 분석
+    * LLM 기반 개인화된 여행 추천 서비스 제공
 
 * **사용방법**
-    1. 
-    2. 
-    3. 
+    1. 사용자 로그인 및 선호 여행 스타일 설정
+    2. 관심 있는 셀럽/여행자 선택 및 팔로우
+    3. 지도 기반 관광지 정보 확인 및 개인화된 추천 받기
 
 * **서비스 URL 정보**
-    * 
-    * 
+    * 배포 URL 정보 : 
+    * 깃허브 링크(백엔드, 프론트 전체 코드 포함) : https://github.com/Cellebmap
 
 * **앱 별 핵심 기능**
-    * 필러링된 로그인 유저들만 사용 가능
-        * 수제 펫푸드에 관심이 많은 유저들과의 원활한 소통 가능
-        * 수제 펫푸드 정보들의 획득 용이성
-    * 댓글 및 대댓글
-        * 상호 소통이 원활하게 되면서 수제 펫푸드 정보 뿐만 아니라, 펫 양육 지식 또한 획득 가능
+    * 인증된 사용자 기반 커뮤니티
+      * 신뢰성 있는 여행 정보 공유
+      * 실시간 현지 정보 업데이트
+
+   * 맞춤형 여행지 추천
+      * 사용자 선호도 기반 맞춤형 추천
+      * LLM 서비스 활용 개인화된 정보 제공
+
+   * 지도 기반 인터페이스
+     * 직관적인 위치 정보 제공
+     * 경로 최적화 추천
      
 * **ERD**
 ```mermaid
@@ -29,46 +35,55 @@ erDiagram
         String username
         String email
         String password
+        String preferences
+        DateTime last_login
         DateTime created_at
         DateTime updated_at
     }
 
-    Post {
+    Celebrity {
         BigInt id PK
-        String title
-        String content
+        String name
+        String description
+        String social_links
         DateTime created_at
-        DateTime updated_at
-        BigInt user_id FK
     }
 
-    Reply {
+    Location {
         BigInt id PK
-        String title
-        String content
+        String name
+        String description
+        Float latitude
+        Float longitude
+        String category
+        String photos
         DateTime created_at
-        DateTime updated_at
-        BigInt user_id FK
-        BigInt post_id FK
+        BigInt celebrity_id FK
     }
 
-    Comment {
+    Review {
         BigInt id PK
-        String title
         String content
+        Int rating
+        String photos
+        DateTime visit_date
         DateTime created_at
-        DateTime updated_at
         BigInt user_id FK
-        BigInt post_id FK
-        BigInt reply_id FK
+        BigInt location_id FK
     }
 
-    User ||--o{ Post : "write"
-    User ||--o{ Reply : "write"
-    User ||--o{ Comment : "write"
-    Post ||--o{ Reply : "has"
-    Post ||--o{ Comment : "has"
-    Reply ||--o{ Comment : "has"
+    UserFollow {
+        BigInt id PK
+        DateTime created_at
+        BigInt user_id FK
+        BigInt celebrity_id FK
+    }
+
+    User ||--o{ Review : "writes"
+    User ||--o{ UserFollow : "follows"
+    Celebrity ||--o{ Location : "recommends"
+    Celebrity ||--o{ UserFollow : "followed_by"
+    Location ||--o{ Review : "has"
 ```
 
  ![2회차 프로젝트_ERD drawio](https://github.com/najasinis/Handmade_Pet_Food_Blog/assets/145651124/ad40e6a9-38eb-4597-a8c2-2fc91340e078)
@@ -76,22 +91,26 @@ erDiagram
 * **WBS**
 ```mermaid
 gantt
-    title Handmade_Pet_Food_Blog
+    title Cellebmap Development Timeline
     dateFormat  YYYY-MM-DD
-    section 계획
-    프로젝트 범위 정의        :done,    des1, 2024-03-06, 1d
-    요구사항 수집             :active,  des2, after des1, 1d
+    section 기획
+    서비스 기획              :done,    plan1, 2024-03-01, 5d
+    요구사항 분석            :active,  plan2, after plan1, 5d
     section 설계
-    와이어프레임 작성         :         des3, after des2, 1d
-    데이터베이스 스키마 설계  :         des4, after des2, 1d
+    시스템 아키텍처 설계     :         arch1, after plan2, 7d
+    데이터베이스 설계        :         arch2, after plan2, 5d
+    UI/UX 설계              :         arch3, after plan2, 10d
     section 개발
-    기능 개발                :         dev2, after des2, 2d
+    백엔드 API 개발          :         dev1, after arch2, 15d
+    프론트엔드 개발          :         dev2, after arch3, 15d
+    LLM 엔진 개발           :         dev3, after dev1, 10d
     section 테스트
-    테스트 케이스 작성       :         tes1, after dev2, 1d
-    테스트                  :         tes2, after dev2, 1d
+    단위 테스트              :         test1, after dev3, 5d
+    통합 테스트              :         test2, after test1, 5d
+    사용자 테스트            :         test3, after test2, 5d
     section 배포
-    배포 준비               :         dep1, after tes2, 1d
-    출시                    :         dep2, after dep1, 1d
+    베타 서비스              :         deploy1, after test3, 10d
+    정식 출시                :         deploy2, after deploy1, 5d
 ```
 
 * **화면 정의서**
