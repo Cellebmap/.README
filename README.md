@@ -35,7 +35,7 @@
 ```mermaid
 classDiagram
     class User {
-        -Long id
+        -Long userid
         -String email
         -String password
         -String preferredRegion
@@ -45,7 +45,7 @@ classDiagram
     }
 
     class Location {
-        -Long id
+        -Long locationid
         -String name
         -String address
         -String category
@@ -54,7 +54,7 @@ classDiagram
     }
 
     class Celebrity {
-        -Long id
+        -Long celebrityid
         -String name
         -List<Location> visitedLocations
         +getVisitedPlaces()
@@ -63,7 +63,7 @@ classDiagram
     }
 
     class TravelPlan {
-        -Long id
+        -Long planid
         -User user
         -List<Location> locations
         +createPlan()
