@@ -32,7 +32,85 @@
      * 경로 최적화 추천
      
 * **ERD**
+```mermaid
+classDiagram
+    class User {
+        -Long id
+        -String email
+        -String password
+        -String nickname
+        -String preferredRegion
+        +login()
+        +logout()
+        +updateProfile()
+        +getPreferences()
+    }
 
+    class Location {
+        -Long id
+        -String name
+        -String address
+        -Double latitude
+        -Double longitude
+        -String category
+        -String description
+        +getDetails()
+        +updateInfo()
+        +getReviews()
+    }
+
+    class Celebrity {
+        -Long id
+        -String name
+        -List<Location> visitedLocations
+        +getVisitedPlaces()
+        +addVisitedPlace()
+        +getRecommendations()
+    }
+
+    class TravelPlan {
+        -Long id
+        -User user
+        -List<Location> locations
+        -Date startDate
+        -Date endDate
+        +createPlan()
+        +updatePlan()
+        +optimizeRoute()
+    }
+
+    class Review {
+        -Long id
+        -User user
+        -Location location
+        -String content
+        -Integer rating
+        -Date visitDate
+        +createReview()
+        +updateReview()
+        +deleteReview()
+    }
+
+    class RecommendationService {
+        +List<Location> recommendByRegion(String region)
+        +List<Location> getCelebrityVisits()
+        +List<Location> getPersonalizedRecommendations(User user)
+    }
+
+    class MapService {
+        +showLocationsOnMap(List<Location> locations)
+        +optimizeRoute(List<Location> locations)
+        +calculateDistance(Location start, Location end)
+    }
+
+    User "1" -- "*" TravelPlan
+    User "1" -- "*" Review
+    Location "1" -- "*" Review
+    Celebrity "1" -- "*" Location
+    TravelPlan "*" -- "*" Location
+    RecommendationService -- Location
+    MapService -- Location
+```
 
 * **WBS**
 ```mermaid
